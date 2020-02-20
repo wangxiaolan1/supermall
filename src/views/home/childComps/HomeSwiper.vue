@@ -1,9 +1,9 @@
 <template>
 		<swiper>
 			<swiper-item v-for="item in banners">
-				<a :href="item.link">
-					<img :src="item.image" alt="" />
-				</a>
+				
+					<img :src="item.image" alt="" @load="imageLoad"/>
+			
 			</swiper-item>
 		</swiper>			
 </template>
@@ -12,6 +12,10 @@
 	import {Swiper, SwiperItem} from '../../../components/common/swiper'
 	export default {
 		name:'HomeSwiper',
+		components:{
+			Swiper,
+			SwiperItem
+		},
 		props:{
 			banners:{
 				type:Array,
@@ -21,10 +25,23 @@
 			}
 			
 		},
-		components:{
-			Swiper,
-			SwiperItem
+		data(){
+			return {
+				isLoad:false
+			}
 		},
+		methods:{
+			
+			imageLoad(){ 
+				//这种方法与debounce 的区别
+				if(!this.isLoad){
+					this.$emit('swipperimage')
+					this.isLoad=true
+				}
+				
+			}
+		}
+		
 		
 		
 	}

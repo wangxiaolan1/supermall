@@ -14,16 +14,17 @@
 
 <style>
 	.nav-bar{
-		position:fixed;
+		/*position:fixed;
 		top:0;
 		left:0;
-		z-index: 8;
+		z-index:8;*/
 		line-height: 44px;
 		height:44px;
 		background:var(--color-tint);
 		display:flex;
 		text-align:center;
 		width:100%;
+		
 	}
 	.left , .right{
 		width:60px

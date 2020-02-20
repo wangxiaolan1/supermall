@@ -16,7 +16,6 @@
 <style>
 	.feature{
 		width:100%;
-		height:500px;
 	}
 	.feature img{
 		width:100%;
